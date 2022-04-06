@@ -15,25 +15,16 @@ function Header({ title }: Props) {
 
 
 export default function HomePage() {
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton']
-
-  const [likes, setLikes] = useState<number>(0)
-
-  function handleClick() {
-    setLikes(likes + 1)
-  }
 
   return (
     <div>
-      <Header title="Develop. Preview. Ship. 🚀" />
+      <div className="flex justify-center">
+        <UploadImage />
+      </div>
 
-      <UploadImage/>
-
-      <Link href="/posts/first-post">
+      {/* <Link href="/posts/first-post">
         <a>this page!</a>
-      </Link>
-
-      <button onClick={handleClick}>Like ({likes})</button>
+      </Link> */}
     </div>
   )
 }
