@@ -20,7 +20,8 @@ export default function ImagePlaceholder({src, alt, onChange}: Props) {
                         Attach a file</p>
                 </div>
                 <input 
-                    type="file" 
+                    type="file"
+                    accept="image/png" 
                     className="opacity-0" 
                     onChange={onChange}
                     />
