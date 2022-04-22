@@ -1,9 +1,9 @@
 export const navLinks = [
     { name: "Home", 
-     path: "/" 
+     path: "/home" 
     },
     { name: "Extract text", 
-    path: "/extract" 
+    path: "/" 
    },
     {
       name: "Merge PDF",

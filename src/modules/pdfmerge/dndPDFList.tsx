@@ -16,13 +16,8 @@ export default function DndPDFList() {
     const [mergedPdfUrl, setMergedPdfUrl] = useState<string>(defaultEmptyUrl);
     const [responsive, isTouchDevice] = useResponsive();
     const [msg, setMsg] = useState({ msg: '', severity: 'succes', id: 1 })
+    const [ loading, setLoading] = useState(false);
 
-
-    useEffect(() => {
-
-        console.log('CHANGED URL TO', mergedPdfUrl);
-
-    }, [mergedPdfUrl])
 
     const handleFileUpload = (e: any) => {
         if (e.target.files[0]) {
@@ -40,39 +35,26 @@ export default function DndPDFList() {
     }
 
     const handleMerge = async (files: IItem[]) => {
-        console.log('Pushed');
-
+        setLoading(true)
         try {
-            console.log('Pushed 2');
-
             const merger = new PDFMerger();
-
             for (const item of files) {
                 if (item.file) {
                     await merger.add(item.file)
                 }
             }
-            console.log('Pushed 3');
-
+            // known error in library: cannot merge already merged documents
             const mergedPdf = await merger.saveAsBlob();
-
-            console.log('Pushed 4');
-
             const url = URL.createObjectURL(mergedPdf)
             setMergedPdfUrl(url);
             setMsg({ msg: "Merged PDF!", severity: 'succes', id: msg.id + 1 })
+            setLoading(false);
 
         } catch (error: any) {
 
             setMsg({ msg: error.message, severity: 'error', id: msg.id + 1 })
             console.log('Found error', error);
         }
-    }
-
-    const handleMerge2 = () => {
-        handleMerge(items).then(r => r).catch(error => console.log(error));
-
-
     }
 
     const handleMergedUrlChange = (url: string) => {
@@ -104,12 +86,13 @@ export default function DndPDFList() {
                     <DndList onItemChange={setItems} onMergedPdfUrlChange={(url) => handleMergedUrlChange(url)} mergedUrl={mergedPdfUrl} parentItems={items} />
                     <div className='flex'>
                         <div className='mx-auto'>
-                            {items.length > 1 && <button
-                                onClick={() => handleMerge2()}
-                                className='lg:mb-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer shadow-xl'
+                            {items.length > 1 &&
+                             <button
+                                onClick={() => handleMerge(items)}
+                                className={`lg:mb-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer shadow-xl`}
                             >Merge PDF</button>}
                             {mergedPdfUrl && <a
-                                className={'lg:mb-5 ml-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer'}
+                                className={`lg:mb-5 ml-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer`}
                                 href={mergedPdfUrl} download={'merged.pdf'}>Download</a>
                             }
                         </div>
