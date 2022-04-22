@@ -10,15 +10,6 @@ export default function Tooltip({ message, children }: Props) {
     const [style, setStyle] = useState('opacity-0');
 
     return (
-        // <div className="relative flex flex-col items-center group">
-        //   {children}
-        //   <div className={`w-40 transition-opacity ease-in-out duration-600 absolute  bottom-0 flex items-center mb-3 mr-[120px]  group-hover:opacity-100 opacity-0  `}>
-        //     <span className="relative z-10 p-2 text-xs font-bold text-white  bg-gray-600 shadow-lg rounded-md"
-        //     >{message}
-        //     </span>
-        //     <div className="arrow w-6 h-4 -ml-5 mb-1 rotate-45 bg-gray-600"></div>
-        //   </div>
-        // </div>
         <div className="relative flex flex-col items-center  ">
             <span className="flex"
                 onMouseEnter={e => {

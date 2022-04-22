@@ -6,7 +6,7 @@ import ImagePlaceholder from '../../common/components/elements/imagePlaceholder'
 import DndList from './dnd/dndList';
 import { IItem } from './dnd/dndTypes'
 import useResponsive from '../../common/hooks/useResponsive';
-import ErrorSnack from '../../common/components/alerts/snackbar';
+import SnackBar from '../../common/components/alerts/snackbar';
 
 
 export default function DndPDFList() {
@@ -15,7 +15,7 @@ export default function DndPDFList() {
     const [items, setItems] = useState<IItem[]>([]);
     const [mergedPdfUrl, setMergedPdfUrl] = useState<string>(defaultEmptyUrl);
     const [responsive, isTouchDevice] = useResponsive();
-    const [msg, setMsg] = useState({msg: '', severity: 'succes', id: 1})
+    const [msg, setMsg] = useState({ msg: '', severity: 'succes', id: 1 })
 
 
     useEffect(() => {
@@ -41,7 +41,7 @@ export default function DndPDFList() {
 
     const handleMerge = async (files: IItem[]) => {
         console.log('Pushed');
-        
+
         try {
             console.log('Pushed 2');
 
@@ -59,17 +59,18 @@ export default function DndPDFList() {
             console.log('Pushed 4');
 
             const url = URL.createObjectURL(mergedPdf)
-            setMergedPdfUrl(url)
+            setMergedPdfUrl(url);
+            setMsg({ msg: "Merged PDF!", severity: 'succes', id: msg.id + 1 })
 
         } catch (error: any) {
-            
-            setMsg({msg: error.message, severity: 'error', id: msg.id+1})
+
+            setMsg({ msg: error.message, severity: 'error', id: msg.id + 1 })
             console.log('Found error', error);
         }
     }
 
     const handleMerge2 = () => {
-        handleMerge(items).then( r => r).catch(error => console.log(error));
+        handleMerge(items).then(r => r).catch(error => console.log(error));
 
 
     }
@@ -104,7 +105,7 @@ export default function DndPDFList() {
                     <div className='flex'>
                         <div className='mx-auto'>
                             {items.length > 1 && <button
-                                onClick={() => handleMerge2() }
+                                onClick={() => handleMerge2()}
                                 className='lg:mb-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer shadow-xl'
                             >Merge PDF</button>}
                             {mergedPdfUrl && <a
@@ -115,8 +116,7 @@ export default function DndPDFList() {
                     </div>
                 </>
             }
-            {/* <ErrorSnack type={{ msg: 'wronngg', severity: 'error' }} /> */}
-
+            <SnackBar type={msg} />
         </div>
     );
 }

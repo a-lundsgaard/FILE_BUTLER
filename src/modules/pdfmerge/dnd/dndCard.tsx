@@ -56,30 +56,9 @@ export default function DndPDFCard({ item, items, index, onClear }: Props) {
     };
 
     return (
-        // <div
-        //     onMouseDown={() => setStyle('opacity-0')}
-        //     onTouchMove={() => setStyle('opacity-0')}
-
-        //     onTouchCancel={() => setStyle('opacity-100')}
-        //     onMouseLeave={e => {
-        //         setStyle('opacity-0')
-        //     }}
-        // >
-        //     {!isTouchDevice && 
-        //     <div
-        //         className={`absolute lg:ml-[153px] -mt-[13px] transition-opacity ease-in-out duration-900 z-50 ${style}`}
-        //         onMouseEnter={() => setStyle('opacity-100')}
-        //         onMouseLeave={e => {
-        //             setStyle('opacity-0')
-        //         }}
-        //     >
-        //         <ClearBtn className='' onClick={onClear} />
-        //     </div>
-        //     }
-
         <Draggable key={item.id} draggableId={item.id} index={index} >
             {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
-                <div className='shadow-xl z-0 '
+                <div className='shadow-xl '
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
@@ -101,7 +80,7 @@ export default function DndPDFCard({ item, items, index, onClear }: Props) {
                         <span className='text-gray-400' >{responsive.makeListHorizontal ? displayTitleWithoutBreak(item.content, 15) : displayTitleWithoutBreak(item.content, 10)}</span>
                         <ClearBtn className={`ml-auto right-0 transition-opacity ease-in-out duration-900 ${!isTouchDevice && style}`} onClick={onClear} />
                     </div>
-                    <Document className={'w-20  sm:w-40'} loading={<div className='text-white w-[80px] h-[110px] sm:h-[210px] lg:w-[150px]' >Loading</div>} file={item.src ? item.src : '/Inter_eksamen-2.pdf'}>
+                    <Document className={'w-20 sm:w-40'} loading={<div className='text-white w-[80px] h-[110px] sm:h-[210px] lg:w-[150px]' >Loading</div>} file={item.src ? item.src : '/Inter_eksamen-2.pdf'}>
                         <Page width={responsive.makeListHorizontal ? 155 : 75}  pageNumber={1} />
                     </Document>
 
