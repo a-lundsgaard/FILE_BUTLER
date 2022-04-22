@@ -2,8 +2,8 @@
 import "../../styles/globals.css"
 import type { AppProps } from 'next/app'
 import Head from "next/head";
-import Navbar from "../common/components/navbar/navbar";
 import NavbarResponsive from "../common/components/navbar/navbarResponsive";
+import ErrorSnack from "../common/components/alerts/snackbar";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -17,6 +17,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className='bg-gradient-to-t from-cyan-500 to-blue-500 h-screen ' >
         <NavbarResponsive />
         <Component {...pageProps} />
+        {/* <ErrorSnack type={{msg: 'wronngg', severity: 'error'}} /> */}
+
       </div>  
     </>
   )
