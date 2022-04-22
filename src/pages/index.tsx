@@ -1,8 +1,13 @@
-import UploadImage from '../modules/uploadImage/uploadImage';
+import UploadImage from '../modules/uploadImage';
+
 
 export default function HomePage() {
   return (
-    <div className='bg-gradient-to-t from-cyan-500 to-blue-500 h-screen '>
+    <div>
+      {/* <Head>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head> */}
       <div className="flex justify-center ">
         <UploadImage />
       </div>

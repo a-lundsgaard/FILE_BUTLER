@@ -1,10 +1,12 @@
 import Textarea from "../../common/components/elements/textarea";
 import ImagePlaceholder from "./imagePlaceholder";
 import React, { useState, useEffect } from 'react'
-import { useUploadForm } from "./hooks";
+import { useUploadForm } from "../../common/hooks/useUploadForm";
 import ProgressBar from '../../common/components/elements/progressBar';
 import ClearBtn from "./clearBtn"
 import DotLoader from "../../common/components/elements/dotLoader";
+import MainContainer from '../../common/components/mainContainer'
+import ErrorSnack from '../../common/components/alerts/errorSnack'
 
 
 interface ImgState {
@@ -23,7 +25,9 @@ export default function UploadImage() {
 
     const [textareaValue, setTextareaValue] = useState('');
     const [copyBtnText, setCopyBtnText] = useState('Copy text')
-    const [textareaTitle, setTextareaTitle] = useState<string | JSX.Element >('Extracted text')
+    const [textareaTitle, setTextareaTitle] = useState<string | JSX.Element>('Extracted text')
+    const [displayClearBtn, setdisplayClearBtn] = useState<boolean>(false)
+    const [msg, setMsg] = useState('')
 
     //http://localhost:8080
     const { uploadForm, progress } = useUploadForm('https://ocr-api-1.herokuapp.com/' + "image");
@@ -48,12 +52,13 @@ export default function UploadImage() {
         });
         setTextareaValue('');
         setCopyBtnText('Copy text')
+        setdisplayClearBtn(false)
     }
 
     const handleUploadImage = async (file: File) => {
-        setTextareaTitle(<DotLoader title="Extracting text"/>
+        setTextareaTitle(<DotLoader title="Extracting text" />
         )
-        
+
         const formdata = new FormData();
         const serverFileName = 'IMG-' + Date.now();
         formdata.append("productImage", file, serverFileName);
@@ -61,6 +66,7 @@ export default function UploadImage() {
             .then(({ data }) => {
                 setTextareaValue(data.text)
                 setTextareaTitle('Extracted text')
+                setdisplayClearBtn(true)
             })
             .catch(error => console.log('error', error));
     };
@@ -82,34 +88,39 @@ export default function UploadImage() {
 
 
     return (
-        <div className="flex justify-center mt-8">
-            <div className="p-5 max-w-2xl rounded-lg shadow-xl bg-gray-50">
-                <div className="m-4">
+        <div>
+        <MainContainer>
+            <>
+                <div className="">
+                    {/* <label className="inline-block mb-2 text-gray-400 font-bold">File upload</label> */}
+                    <h3 className='font-bold text-2xl text-gray-600 mb-2 ' >Extract text</h3>
+                    <h4 className='text-xl mb-4 text-gray-400' >Upload and extract text from any image</h4>
 
-                    <div className="flex">
-                        <label className="inline-block mb-2 text-gray-400 font-bold">File upload</label>
-                        {textareaValue && <div
-                            className="ml-auto right-0"
-                            onClick={handleDelete}><ClearBtn />
-                        </div>}
-                    </div>
-                    <div className="flex items-center justify-center w-full">
-                        {file ? <img
-                            className="max-w-xs"
-                            src={src}
-                            alt={alt}
-                        /> : <ImagePlaceholder src={src} alt={alt} onChange={handleImgChange} />}
-                    </div>
-                    <Textarea placeholder="" value={textareaValue} title={textareaTitle}/>
+                    {displayClearBtn && <div
+                        className="ml-auto right-0 flex"
+                        onClick={handleDelete}><ClearBtn />
+                    </div>}
                 </div>
-                <div className="flex justify-center p-2">
+                <div className="flex items-center justify-center">
+                    {file ? <img
+                        className="max-h-[20vh] xl:max-w-sm"
+                        src={src}
+                        alt={alt}
+                    /> : <ImagePlaceholder onChange={handleImgChange} accept="image/png" description="Upload image"  />}
+                </div>
+                <Textarea placeholder="" value={textareaValue} title={<span className="text-xl text-gray-400">{textareaTitle}</span>} />
+
+                <div className="flex justify-center">
                     <button
                         className={`w-full px-4 py-2 text-white ${copyBtnText != 'Copy text' && "bg-blue-400"} ${textareaValue ? "bg-blue-500 hover:bg-blue-400" : "bg-gray-300 cursor-default"} rounded shadow-xl`}
                         onClick={handleOnCopyClick}
                     >{copyBtnText}
                     </button>
                 </div>
-            </div>
+            </>
+            
+        </MainContainer>
         </div>
+
     )
 }

@@ -9,13 +9,14 @@ interface Props {
 export default function Textarea({ placeholder, value, title }: Props) {
 
   return (
-    <div className="space-y-0 mb-3 mt-5 xl:w-96">
-      <label className="form-label inline-block mb-2 text-gray-400 font-bold">
+    <div className="space-y-0 mb-4 mt-7 ">
+      <label className="form-label inline-block mb-4">
         {title}
       </label>
       <textarea
         readOnly
         className="
+          h-[20vh]
           resize-none
           form-control
           block
@@ -31,7 +32,8 @@ export default function Textarea({ placeholder, value, title }: Props) {
           transition
           ease-in-out
           m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+
         id="exampleFormControlTextarea1"
         rows={3}
         placeholder={placeholder}
