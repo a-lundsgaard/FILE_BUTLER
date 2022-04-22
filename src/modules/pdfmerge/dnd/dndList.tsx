@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import DndCard from './dndCard';
-import displayTitleWithoutBreak from '../../common/helpers/titleWithDots';
-import useResponsive from '../../common/hooks/useResponsive';
+import displayTitleWithoutBreak from '../../../common/helpers/titleWithDots';
+import useResponsive from '../../../common/hooks/useResponsive';
 import { Document, Page, pdfjs } from 'react-pdf'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 

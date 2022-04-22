@@ -1,5 +1,5 @@
 import React from 'react'
-import Plus from '../../common/svg/plus'
+import Plus from '../../svg/plus'
 
 interface Props {
     className?: string,

@@ -1,12 +1,12 @@
 import Textarea from "../../common/components/elements/textarea";
-import ImagePlaceholder from "./imagePlaceholder";
+import ImagePlaceholder from "../../common/components/elements/imagePlaceholder";
 import React, { useState, useEffect } from 'react'
 import { useUploadForm } from "../../common/hooks/useUploadForm";
 import ProgressBar from '../../common/components/elements/progressBar';
-import ClearBtn from "./clearBtn"
+import ClearBtn from "../../common/components/buttons/clearBtn"
 import DotLoader from "../../common/components/elements/dotLoader";
 import MainContainer from '../../common/components/mainContainer'
-import ErrorSnack from '../../common/components/alerts/errorSnack'
+import ErrorSnack from '../../common/components/alerts/errorSnack2'
 
 
 interface ImgState {
@@ -88,7 +88,6 @@ export default function UploadImage() {
 
 
     return (
-        <div>
         <MainContainer>
             <>
                 <div className="">
@@ -106,7 +105,7 @@ export default function UploadImage() {
                         className="max-h-[20vh] xl:max-w-sm"
                         src={src}
                         alt={alt}
-                    /> : <ImagePlaceholder onChange={handleImgChange} accept="image/png" description="Upload image"  />}
+                    /> : <ImagePlaceholder onChange={handleImgChange} accept="image/png" description="Upload image" />}
                 </div>
                 <Textarea placeholder="" value={textareaValue} title={<span className="text-xl text-gray-400">{textareaTitle}</span>} />
 
@@ -118,9 +117,8 @@ export default function UploadImage() {
                     </button>
                 </div>
             </>
-            
+            <ErrorSnack />
         </MainContainer>
-        </div>
 
     )
 }

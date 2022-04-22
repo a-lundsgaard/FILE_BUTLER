@@ -1,11 +1,11 @@
 import React, { Component, useEffect, useState } from 'react';
 import PDFMerger from 'pdf-merger-js/browser';
-import AddActionBtn from '../../../common/components/elements/addActionBtn';
-import Tooltip from '../../../common/components/elements/toolTip';
-import ImagePlaceholder from '../../uploadImage/imagePlaceholder';
-import DndList from '../../dnd/dndList';
-import { IItem } from '../../dnd/dndTypes'
-import useResponsive from '../../../common/hooks/useResponsive';
+import AddActionBtn from '../../common/components/elements/addActionBtn';
+import Tooltip from '../../common/components/elements/toolTip';
+import ImagePlaceholder from '../../common/components/elements/imagePlaceholder';
+import DndList from './dnd/dndList';
+import { IItem } from './dnd/dndTypes'
+import useResponsive from '../../common/hooks/useResponsive';
 
 
 export default function DndPDFList() {

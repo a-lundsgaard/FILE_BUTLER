@@ -1,4 +1,4 @@
-import UploadImage from '../modules/uploadImage';
+import UploadImage from '../modules/extractTextFromImage/extractTextFromImage';
 
 
 export default function HomePage() {

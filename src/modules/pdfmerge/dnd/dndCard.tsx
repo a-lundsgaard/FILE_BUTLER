@@ -1,8 +1,8 @@
 import React, { ReactNode, useState } from 'react'
-import displayTitleWithoutBreak from '../../common/helpers/titleWithDots'
-import ClearBtn from '../uploadImage/clearBtn';
-import useResponsive from '../../common/hooks/useResponsive';
-import DragIcon from '../../common/svg/drag';
+import displayTitleWithoutBreak from '../../../common/helpers/titleWithDots'
+import ClearBtn from '../../../common/components/buttons/clearBtn';
+import useResponsive from '../../../common/hooks/useResponsive';
+import DragIcon from '../../../common/svg/drag';
 import { Document, Page, pdfjs } from 'react-pdf'
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 

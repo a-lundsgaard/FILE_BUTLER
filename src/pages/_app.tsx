@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app'
 import Head from "next/head";
 import Navbar from "../common/components/navbar/navbar";
 import NavbarResponsive from "../common/components/navbar/navbarResponsive";
-import ErrorSnack from "../common/components/alerts/errorSnack2";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,10 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Merge PDF</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className='bg-gradient-to-t from-cyan-500 to-blue-500 h-screen' >
+      <div className='bg-gradient-to-t from-cyan-500 to-blue-500 h-screen ' >
         <NavbarResponsive />
         <Component {...pageProps} />
-        <ErrorSnack/>
       </div>  
     </>
   )
