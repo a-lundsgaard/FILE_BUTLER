@@ -17,7 +17,7 @@ export default function NavbarResponsive() {
 
     return (
         <>
-            <nav className='flex items-center flex-wrap shadow-md  '>
+            <nav className='flex items-center flex-wrap shadow-md'>
                 <div className='p-3' >
                     <Link href='/'>
                         <a className='inline-flex items-center p-2 mr-4 '>
@@ -48,7 +48,7 @@ export default function NavbarResponsive() {
                 >
                     <div
                         onMouseLeave={() => setActive(false)}
-                        className={` shadow-md lg:shadow-none bg-blue-500  fixed lg:relative lg:inline-flex lg:flex-row lg:ml-auto  lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto`}>
+                        className={`z-50 shadow-md lg:shadow-none bg-blue-500  fixed lg:relative lg:inline-flex lg:flex-row lg:ml-auto  lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto`}>
                         {navLinks.map((link, index) => {
                             return <Link href={link.path} key={index} >
                                 <a className={` ${pathname === link.path && "bg-blue-400"} lg:mr-2 lg:inline-flex lg:w-auto w-full px-3 py-3 lg:rounded text-white font-bold items-center justify-center hover:bg-blue-700 hover:text-white`} key={index}>{link.name}</a>
