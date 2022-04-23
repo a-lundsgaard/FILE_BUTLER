@@ -1,12 +1,9 @@
-// import App from 'next/app'
 import "../../styles/globals.css"
 import type { AppProps } from 'next/app'
 import Head from "next/head";
 import NavbarResponsive from "../common/components/navbar/navbarResponsive";
-import ErrorSnack from "../common/components/alerts/snackbar";
 import { useRouter } from 'next/router';
 import { navLinks } from "../common/components/navbar/navLinks";
-
 
 
 
@@ -20,12 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{title?.title || 'FileButler'}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
       <div className={`${pathname === '/' ? "bg-indigo-500" : "bg-gradient-to-b from-indigo-700 to-indigo-500"}  min-h-screen`} >
         <NavbarResponsive/>
         <Component {...pageProps} />
-        {/* <ErrorSnack type={{msg: 'wronngg', severity: 'error'}} /> */}
-
       </div>  
     </>
   )

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { navLinks } from './navLinks';
 import { useRouter } from 'next/router';
 import MenuIcon from '../../svg/drag';
-import Logo from '../../svg/hamburgerMenuSvg';
+import Logo from '../../svg/logo';
 import Plus from '../../svg/plus';
 
 
