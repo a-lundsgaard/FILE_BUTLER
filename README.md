@@ -4,7 +4,7 @@ https://filebutler.vercel.app
 
 Completely responsive webapp using a mobile-first approach. 
 
-Unit tests needed to be added in the future.
+Unit tests and a new logo needs to be added in the future.
 
 ## Features
 
