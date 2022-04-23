@@ -1,5 +1,5 @@
 import Textarea from "../../common/components/elements/textarea";
-import ImagePlaceholder from "../../common/components/elements/imagePlaceholder";
+import ImagePlaceholder from "../../common/components/elements/filePlaceholder";
 import React, { useState, useEffect } from 'react'
 import { useUploadForm } from "../../common/hooks/useUploadForm";
 import ProgressBar from '../../common/components/elements/progressBar';
@@ -101,7 +101,7 @@ export default function UploadImage() {
             <>
                 <div className="">
                     {/* <label className="inline-block mb-2 text-gray-400 font-bold">File upload</label> */}
-                    <h3 className='font-bold text-2xl text-gray-600 mb-2 ' >Extract text</h3>
+                    <h3 className='font-semibold text-2xl text-gray-600 mb-2 ' >Extract text</h3>
                     <h4 className='text-xl mb-4 text-gray-400' >Upload and extract text from any image</h4>
                     <div className="flex">
 

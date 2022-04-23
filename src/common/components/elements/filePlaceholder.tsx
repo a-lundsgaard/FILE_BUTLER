@@ -11,7 +11,7 @@ interface Props {
 
 export default function ImagePlaceholder({ onChange, description, accept, ...props }: Props) {
     return (
-        <div className='w-[70vw] sm:w-[25vw]'>
+        <div className='w-[70vw] sm:w-[40vw] md:w-[35vw] lg:w-[30vw]'>
             {props.children}
             <label
                 className="mx-auto cursor-pointer flex flex-col h-32 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300 rounded">

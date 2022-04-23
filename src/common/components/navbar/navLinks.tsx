@@ -1,16 +1,18 @@
 export const navLinks = [
-    { name: "Home", 
-     path: "/home" 
-    },
-    { name: "Extract text", 
-    path: "/" 
-   },
     {
-      name: "Merge PDF",
-      path: "/pdf/pdfmerge",
+        name: "Home",
+        path: "/"
+    }, {
+        name: "Merge PDF",
+        path: "/pdf/pdfmerge",
     },
     {
-      name: "Contact Us",
-      path: "#contact",
+        name: "Extract text",
+        path: "/image/extracttext"
     },
-  ];
+
+    {
+        name: "Contact Us",
+        path: "#contact",
+    },
+];

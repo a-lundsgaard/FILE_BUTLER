@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import PDFMerger from 'pdf-merger-js/browser';
 import AddActionBtn from '../../common/components/elements/addActionBtn';
 import Tooltip from '../../common/components/elements/toolTip';
-import ImagePlaceholder from '../../common/components/elements/imagePlaceholder';
+import ImagePlaceholder from '../../common/components/elements/filePlaceholder';
 import DndList from './dnd/dndList';
 import { IItem } from './dnd/dndTypes'
 import useResponsive from '../../common/hooks/useResponsive';
@@ -67,13 +67,13 @@ export default function DndPDFList() {
         <div className='h-full '>
             {!items.length ?
                 <ImagePlaceholder onChange={handleFileUpload} description='Upload PDF' accept="application/pdf" >
-                    <h3 className='font-bold text-2xl text-gray-600  mb-2' >Merge PDF files</h3>
+                    <h3 className='font-semibold text-2xl text-gray-600  mb-2' >Merge PDF files</h3>
                     <h4 className='text-xl mb-6 text-gray-400' >Combine PDFs in the order you want with the easiest PDF merger available</h4>
                 </ImagePlaceholder>
                 :
                 <>
                     <div className='flex mb-4' >
-                        <h3 className='font-bold text-2xl mt-2 mr-6 text-gray-600' >Merge PDF</h3>
+                        <h3 className='font-semibold text-2xl mt-2 mr-6 text-gray-600' >Merge PDF</h3>
                         <div className='ml-auto right-0 mb-1'>
                             {
                                 isTouchDevice ? <AddActionBtn onChange={handleFileUpload} count={items.length} />
@@ -89,10 +89,10 @@ export default function DndPDFList() {
                             {items.length > 1 &&
                              <button
                                 onClick={() => handleMerge(items)}
-                                className={`lg:mb-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer shadow-xl`}
+                                className={`lg:mb-5 bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded cursor-pointer shadow-xl`}
                             >Merge PDF</button>}
                             {mergedPdfUrl && <a
-                                className={`lg:mb-5 ml-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer`}
+                                className={`lg:mb-5 ml-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded cursor-pointer`}
                                 href={mergedPdfUrl} download={'merged.pdf'}>Download</a>
                             }
                         </div>
