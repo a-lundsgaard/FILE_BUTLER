@@ -14,7 +14,7 @@ export default function ImagePlaceholder({ onChange, description, accept, ...pro
         <div className='w-[70vw] sm:w-[40vw] md:w-[35vw] lg:w-[30vw]'>
             {props.children}
             <label
-                className="mx-auto cursor-pointer flex flex-col h-32 bg-blue-50  border-2 border-blue-100  hover:bg-blue-50  hover:border-blue-300 rounded">
+                className="mx-auto cursor-pointer flex flex-col h-32 bg-blue-50  border-2 border-blue-200  hover:bg-blue-50  hover:border-blue-400 rounded">
                 <div className="flex flex-col items-center justify-center pt-7">
                     <svg className="w-8 h-8 text-gray-400 group-hover:text-gray-600"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -12,7 +12,7 @@ export default function HomePage() {
       <div className="text-center inline " >
         <section className="text-white pb-20 lg:pb-40 pt-8 sm:pt-20 px-10 bg-gradient-to-b from-indigo-800 to-indigo-500 " >
           <h1 className='font-semibold text-3xl sm:text-4xl md:text-5xl' > The essential tool you need to work with files.</h1>
-          <h2 className='text-sm sm:text-xl mt-2 ' >A website to merge PDF files and extract text from images. 100% free to use.</h2>
+          <h2 className='text-sm sm:text-xl mt-4 ' >Makes it easy to work with different files. Features are continously added.  100% free to use. </h2>
         </section>
       </div>
       <MainContainer className='-mt-10 sm:-mt-8 lg:-mt-[80px]'>

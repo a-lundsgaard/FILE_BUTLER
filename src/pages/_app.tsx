@@ -5,6 +5,7 @@ import Head from "next/head";
 import NavbarResponsive from "../common/components/navbar/navbarResponsive";
 import ErrorSnack from "../common/components/alerts/snackbar";
 import { useRouter } from 'next/router';
+import { navLinks } from "../common/components/navbar/navLinks";
 
 
 
@@ -12,12 +13,12 @@ import { useRouter } from 'next/router';
 function MyApp({ Component, pageProps }: AppProps) {
   
   const { asPath, pathname } = useRouter();
-
+  const title = navLinks.find(obj => obj.path === pathname)
 
   return (
     <>
       <Head>
-        <title>Merge PDF</title>
+        <title>{title?.title || 'FileButler'}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className={`${pathname === '/' ? "bg-indigo-500" : "bg-gradient-to-b from-indigo-700 to-indigo-500"}  min-h-screen`} >

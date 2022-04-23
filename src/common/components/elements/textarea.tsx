@@ -15,7 +15,7 @@ export default function Textarea({ placeholder, value, title }: Props) {
       </label>
       <textarea
         readOnly
-        className={`ring-1  ${ value != '' && "h-[20vh] ring-blue-500 ring-2"} resize-none form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding rounded transition ease-in-out m-0 focus:text-gray-700 border-0 focus:bg-white focus:border-blue-500 focus:outline-none`}
+        className={`ring-1  ${ value != '' && "h-[20vh] ring-blue-400 ring-2"} resize-none form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding rounded transition ease-in-out m-0 focus:text-gray-700 border-1 border-blue-50 focus:bg-white  focus:outline-none`}
         id="exampleFormControlTextarea1"
         rows={3}
         placeholder={placeholder}
