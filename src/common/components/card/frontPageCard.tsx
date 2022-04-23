@@ -1,16 +1,19 @@
 import React, { ReactNode } from 'react'
+import Link from 'next/link';
 
 interface Props {
     svg?: ReactNode,
     title: string,
-    description: string
+    description: string,
+    link: string
 }
 
-export default function FrontPageCard({ svg, title, description }: Props) {
+export default function FrontPageCard({ svg, title, description, link }: Props) {
     return (
 
-        <a className=' cursor-pointer hover:bg-indigo-100  hover:shadow-md group rounded-md p-6 lg:p-10 bg-white ring-1 ring-slate-200 shadow-sm' >
-            <dl className=" sm:block  xl:blockitems-center lg:max-w-xs">
+        <div className=' cursor-pointer hover:bg-indigo-100  hover:shadow-md group rounded-md p-6 lg:p-10 bg-white ring-1 ring-slate-200 shadow-sm' >
+           <Link href={link}>
+           <dl className=" sm:block  xl:blockitems-center lg:max-w-xs">
                 <div className='mb-4'>
                     {svg}
                 </div>
@@ -25,6 +28,7 @@ export default function FrontPageCard({ svg, title, description }: Props) {
                     <dd className="">{description}</dd>
                 </div>
             </dl>
-        </a>
+            </Link>
+        </div>
     )
 }

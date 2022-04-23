@@ -89,10 +89,10 @@ export default function DndPDFList() {
                             {items.length > 1 &&
                              <button
                                 onClick={() => handleMerge(items)}
-                                className={`lg:mb-5 bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded cursor-pointer shadow-xl`}
+                                className={`lg:mb-5 bg-orange-600 hover:bg-red-700 text-white md:text-lg font-semibold py-2 px-4 rounded cursor-pointer shadow-md`}
                             >Merge PDF</button>}
                             {mergedPdfUrl && <a
-                                className={`lg:mb-5 ml-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded cursor-pointer`}
+                                className={`lg:mb-5 ml-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold md:text-lg py-2 px-4 rounded cursor-pointer`}
                                 href={mergedPdfUrl} download={'merged.pdf'}>Download</a>
                             }
                         </div>

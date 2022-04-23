@@ -41,7 +41,7 @@ export default function DndPDFCard({ item, items, index, onClear }: Props) {
             // some basic styles to make the items look a bit nicer
             userSelect: 'none',
             padding: grid * 2,
-            margin: responsive.makeListHorizontal ? `0 ${index === items.length - 1 ? 0 : grid * 2}px 0 0` : `0 0 ${grid}px 0`,
+            margin: responsive.makeListHorizontal ? `0 ${index === items.length - 1 ? 0 : grid * 2}px 0 0` : `0 0 ${index === items.length - 1 ? 0 : grid*2}px 0`,
             borderRadius: 10,
             //zIndex: 1,
 

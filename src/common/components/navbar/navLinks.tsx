@@ -1,14 +1,16 @@
+import routes from "../../routes/routes";
+
 export const navLinks = [
     {
         name: "Home",
-        path: "/"
+        path: routes.HOME
     }, {
         name: "Merge PDF",
-        path: "/pdf/pdfmerge",
+        path: routes.MERGEPDF,
     },
     {
         name: "Extract text",
-        path: "/image/extracttext"
+        path: routes.EXTRACTTEXT
     },
 
     {

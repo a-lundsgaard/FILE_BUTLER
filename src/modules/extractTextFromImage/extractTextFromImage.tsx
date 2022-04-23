@@ -122,7 +122,7 @@ export default function UploadImage() {
 
                 <div className="flex justify-center">
                     <button
-                        className={`w-full px-4 py-2 text-white bg-blue-500 ${textareaValue ? " hover:bg-blue-400" : "bg-gray-300 cursor-default"} rounded shadow-xl`}
+                        className={`w-full px-4 py-2 text-white bg-blue-500 ${textareaValue ? " hover:bg-blue-400" : "bg-blue-200 cursor-default"} rounded shadow-md`}
                         onClick={handleOnCopyClick}
                     >{copyBtnText}
                     </button>

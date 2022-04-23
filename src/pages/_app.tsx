@@ -4,9 +4,15 @@ import type { AppProps } from 'next/app'
 import Head from "next/head";
 import NavbarResponsive from "../common/components/navbar/navbarResponsive";
 import ErrorSnack from "../common/components/alerts/snackbar";
+import { useRouter } from 'next/router';
+
+
 
 
 function MyApp({ Component, pageProps }: AppProps) {
+  
+  const { asPath, pathname } = useRouter();
+
 
   return (
     <>
@@ -14,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Merge PDF</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className='bg-indigo-500 min-h-screen' >
+      <div className={`${pathname === '/' ? "bg-indigo-500" : "bg-gradient-to-b from-indigo-800 to-indigo-500"}  min-h-screen`} >
         <NavbarResponsive/>
         <Component {...pageProps} />
         {/* <ErrorSnack type={{msg: 'wronngg', severity: 'error'}} /> */}

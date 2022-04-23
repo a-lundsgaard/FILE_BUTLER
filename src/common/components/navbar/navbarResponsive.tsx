@@ -52,7 +52,7 @@ export default function NavbarResponsive() {
                         className={`z-50 shadow-md lg:shadow-none ${navBarColor} fixed lg:relative lg:inline-flex lg:flex-row lg:ml-auto  lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto`}>
                         {navLinks.map((link, index) => {
                             return <Link href={link.path} key={index} >
-                                <a className={` ${pathname === link.path && "bg-blue-400"} lg:mr-2 lg:inline-flex lg:w-auto w-full px-3 py-3 lg:rounded text-white font-bold items-center justify-center hover:bg-blue-700 hover:text-white`} key={index}>{link.name}</a>
+                                <a className={` ${pathname === link.path && "bg-indigo-400"} lg:mr-2 lg:inline-flex lg:w-auto w-full px-3 py-3 lg:rounded text-white font-bold items-center justify-center hover:bg-indigo-700 hover:text-white`} key={index}>{link.name}</a>
                             </Link>
                         })
                         }
