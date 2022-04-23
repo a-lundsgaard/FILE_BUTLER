@@ -1,10 +1,12 @@
 # FileButler
 
+https://filebutler.vercel.app
+
 Completely responsive webapp using a mobile-first approach. 
 
 ## Features
 
-Features are continously added and includes working with files e.g. merging PDF files or extracting text from images. 
+Features includes working with files e.g. merging PDF files or extracting text from images. 
 
 ## Stack
 Developed using Next.js, Tailwind CSS, TypesScript and Vercell for DevOps.
