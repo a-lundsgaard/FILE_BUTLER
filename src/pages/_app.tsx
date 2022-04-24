@@ -1,4 +1,6 @@
 import "../../styles/globals.css"
+import "../../styles/snackbar.css"
+
 import type { AppProps } from 'next/app'
 import Head from "next/head";
 import NavbarResponsive from "../common/components/navbar/navbarResponsive";
