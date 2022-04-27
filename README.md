@@ -2,7 +2,7 @@
 
 Completely responsive webapp using a mobile-first approach. 
 
-Demo:https://filebutler.vercel.app
+Demo: https://filebutler.vercel.app
 
 Unit tests and a new logo need to be added in the future.
 
