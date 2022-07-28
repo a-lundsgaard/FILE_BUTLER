@@ -8,7 +8,7 @@ Unit tests and a new logo need to be added in the future.
 
 ## Features
 
-Features includes working with files e.g. merging PDF files or extracting text from images. 
+Features includes working with files e.g. merging PDF files and extracting text from images. 
 
 ## Stack
 
